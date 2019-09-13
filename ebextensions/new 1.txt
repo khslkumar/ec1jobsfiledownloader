@@ -1,0 +1,6 @@
+curl https://intoli.com/install-google-chrome.sh | bash
+
+#cloud-boothook
+#!/bin/bash
+cd /opt/batchjobsapp/
+java -jar geniejobsbatch.jar &

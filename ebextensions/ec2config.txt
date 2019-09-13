@@ -1,0 +1,14 @@
+container_commands:
+    01_install_google_chrome_stable:
+        command: curl https://intoli.com/install-google-chrome.sh | bash
+    02_download_chrome_driver_for_selenium:
+        command: wget https://chromedriver.storage.googleapis.com/72.0.3626.69/chromedriver_linux64.zip
+	03_unzip_chrome_driver:
+		command: unzip chromedriver_linux64.zip
+	04_change_dir:
+		command: cd /opt/batchjobsapp/
+	05_copy_app_jar:
+		aws s3 cp s3://vendor-jobs-downloader/geniejobsbatch.jar
+	06_start_java_app:
+		java -jar geniejobsbatch.jar &
+		
